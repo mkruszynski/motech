@@ -44,24 +44,24 @@
                                 <li ng-show="!item.task.enabled && item.task.hasRegisteredChannel" class="task-element task-paused">
                                     <div class="task-list-button-activity">
                                         <div class="task-list-text-activity">{{msg('task.paused')}}</div>
-                                        <div class="task-list-div-activity"><img class="task-list-img-activity" src="../tasks/img/task-paused.png" /></div>
+                                        <div class="task-list-div-activity"><i class="task-list-img-activity fa fa-ban"></i></div>
                                     </div>
                                 </li>
                                 <li ng-show="item.task.enabled && item.task.hasRegisteredChannel" class="task-element task-active">
                                     <div class="task-list-button-activity">
-                                        <div class="task-list-div-activity"><img class="task-list-img-activity" src="../tasks/img/task-active.png" /></div>
+                                        <div class="task-list-div-activity"><i class="task-list-img-activity fa fa-play-circle>"></i></div>
                                         <div class="task-list-text-activity">{{msg('task.active')}}</div>
                                     </div>
                                 </li>
                                 <li ng-show="!item.task.hasRegisteredChannel" class="task-element task-paused">
                                     <div class="task-list-button-activity">
                                         <div class="task-list-text-activity">{{msg('task.channel.deregistered')}}</div>
-                                        <div class="task-list-div-activity"><img class="task-list-img-activity" src="../tasks/img/task-paused.png" /></div>
+                                        <div class="task-list-div-activity"><i class="task-list-img-activity fa fa-ban"></i></div>
                                     </div>
                                 </li>
                                 <li class="divider-vertical"></li>
-                                <li ng-show="item.task.enabled" class="task-element"><a href="#/tasks/task/{{item.task.id}}/edit"><img src="../tasks/img/task-settings.png" class="task-list-img" /></a></li>
-                                <li ng-hide="item.task.enabled" class="task-element"><a href="#/tasks/task/{{item.task.id}}/edit"><img src="../tasks/img/task-settings-paused.png" class="task-list-img" /></a></li>
+                                <li ng-show="item.task.enabled" class="task-element"><a href="#/tasks/task/{{item.task.id}}/edit"><div class="task-list-img task-list-settings-enabled"/></a></li>
+                                <li ng-hide="item.task.enabled" class="task-element"><a href="#/tasks/task/{{item.task.id}}/edit"><div class="task-list-img task-list-settings-disabled" /></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>

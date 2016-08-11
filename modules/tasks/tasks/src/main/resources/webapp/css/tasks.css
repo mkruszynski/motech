@@ -312,6 +312,49 @@ manipulation-sorter .manipulation .remove:before {
     content: "\F057";
     font:normal normal normal 14px/1 FontAwesome;
 }
+.tasks-element .arrow-right {
+    float: none; !important;
+    font-size: 12px; !important;
+    text-shadow: 0px 0px #FFF;
+    opacity: 1;
+    width: 12px;
+    overflow:hidden;
+}
+
+.tasks-element .arrow-right:before {
+    content: "\F061"
+    font:normal normal normal 14px/1 FontAwesome;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+0,73b1e7+24,0a77d5+50,539fe1+79,87bcea+100;Blue+Pipe+%231 */
+    background: #d0e4f7; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tasks .task-info {
+    float: none; !important;
+    font-size: 12px; !important;
+    text-shadow: 0px 0px #FFF;
+    opacity: 1;
+    width: 12px;
+    overflow:hidden;
+}
+
+.tasks .task-info:before {
+    content: "\F129"
+    font:normal normal normal 14px/1 FontAwesome;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+0,73b1e7+24,0a77d5+50,539fe1+79,87bcea+100;Blue+Pipe+%231 */
+    background: #d0e4f7; /* Old browsers */
+    background: -moz-linear-gradient(top, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .tasks editable-content > div[contenteditable] {
   border: 2px dotted #AAAAAA;
@@ -400,6 +443,20 @@ manipulation-sorter .manipulation .remove:before {
     width: 36px;
 }
 
+.tasks .tasks-list .task-element .task-list-settings-enabled {
+    background: url('../img/task-settings.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 36px;
+}
+
+.tasks .tasks-list .task-element .task-list-settings-disabled {
+    background: url('../img/task-settings-paused.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 36px;
+}
+
 .tasks .tasks-list .task-nav.pull-right .task-list-img {
     width: 28px;
 }
@@ -438,6 +495,11 @@ manipulation-sorter .manipulation .remove:before {
 
 .tasks .task-list-div-activity {
     float: left;
+}
+
+.tasks .task-list-div-activity .fa-play-circle:before {
+    background-color: #1566B1;
+    backgroud-clip: text;
 }
 
 .tasks .tasks-list .task-element.task-paused .task-list-img-activity {
