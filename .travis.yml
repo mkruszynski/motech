@@ -7,3 +7,5 @@ after_failure:
 env:
   - DB=mysql
   - DB=postgresql
+
+sudo: required
