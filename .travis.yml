@@ -4,4 +4,5 @@ jdk:
 
 sudo: required
 after_success:
+  - chmod +x ./after_failure.sh
   - ./after_failure.sh
