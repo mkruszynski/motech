@@ -5,6 +5,7 @@ body='{
   "branch":"master"
 }}'
 
+mvn clean install -PIT
 curl -s -X POST \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
