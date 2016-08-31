@@ -1,11 +1,5 @@
 language: java
 jdk: oraclejdk8
 
-after_failure:
+after_success:
   - ./after_failure.sh
-
-env:
-  - DB=mysql
-  - DB=postgresql
-
-sudo: required
