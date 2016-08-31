@@ -3,10 +3,10 @@ jdk:
   - oraclejdk8
 
 after_success:
-  - curl -s -X POST \
-      -H "Content-Type: application/json" \
-      -H "Accept: application/json" \
-      -H "Travis-API-Version: 3" \
-      -H "Authorization: token 6aBhjLXTPBX3e_oszyrNzw" \
-      -d '{"request": {"branch":"master"}}' \
-      https://api.travis-ci.org/repo/mkruszynski%2Fmotech/requests
+  - "curl -s -X POST \
+      -H \"Content-Type: application/json\" \
+      -H \"Accept: application/json\" \
+      -H \"Travis-API-Version: 3\" \
+      -H \"Authorization: token 6aBhjLXTPBX3e_oszyrNzw\" \
+      -d '{\"request\": {\"branch\":\"master\"}}' \
+      https://api.travis-ci.org/repo/mkruszynski%2Fmotech/requests"
