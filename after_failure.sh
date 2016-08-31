@@ -11,4 +11,4 @@ curl -s -X POST
   -H "Travis-API-Version: 3"
   -H "Authorization: token 6aBhjLXTPBX3e_oszyrNzw"
   -d "$body"
-  https://api.travis-ci.org/repo/travis-ci%2Ftravis-core/requests
+  https://api.travis-ci.org/repo/mkruszynski%2Fmotech/requests
