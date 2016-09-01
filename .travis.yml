@@ -8,3 +8,7 @@ before_script:
 
 script:
   - mvn clean install -PIT
+
+cache:
+  directories:
+    - $HOME/.m2
