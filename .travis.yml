@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk8
+
+sudo: required
+script:
+  - chmod +x ./after_failure.sh
+  - ./after_failure.sh
