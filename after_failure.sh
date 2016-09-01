@@ -8,7 +8,7 @@
 if [[$TRAVIS_BRANCH == 'master' ]]; then
     mvn clean install -PIT
 elif [[$TRAVIS_PULL_REQUEST == true ]]; then
-    echo "PULL REQUEST"
+    echo "PULL REQUEST";
 fi
 #curl -s -X POST \
 # -H "Content-Type: application/json" \
