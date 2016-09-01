@@ -3,6 +3,6 @@ jdk:
   - oraclejdk8
 
 sudo: required
-after_success:
+script:
   - chmod +x ./after_failure.sh
   - ./after_failure.sh
