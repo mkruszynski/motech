@@ -1693,7 +1693,6 @@
                                 <goals>
                                     <goal>verify</goal>
                                 </goals>
-                                <phase>integration-test</phase>
                                 <configuration>
                                     <summaryFiles>
                                         <summaryFile>target/failsafe-reports/failsafe-summary-it.xml</summaryFile>
