@@ -20,7 +20,7 @@ before_install:
 
 before_script:
   - sudo chmod +x ./travis.before_build.sh
-  - ./travis.before_build.sh
+  - ./travis_before_build.sh
 
 script:
   - mvn clean install -PIT -q
