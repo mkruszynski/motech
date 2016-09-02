@@ -19,7 +19,8 @@ before_install:
   - sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/ /usr/share/tomcat7/ /var/log/tomcat7/
 
 before_script:
-  - sudo ./travis.before_build.sh
+  - sudo chmod +x ./travis.before_build.sh
+  - ./travis.before_build.sh
 
 script:
   - mvn clean install -PIT -q
