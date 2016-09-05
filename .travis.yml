@@ -3,7 +3,9 @@ language: java
 jdk:
   - oraclejdk8
 
-install:
+install: true
+
+script:
   - mvn clean install -U -B
 
 cache:
