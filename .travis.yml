@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 
 install:
-  - mvn clean install -U -B -f
+  - mvn clean install -U -B
 
 cache:
   directories:
