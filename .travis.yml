@@ -8,8 +8,12 @@ env:
 
 matrix:
   exclude:
-    - env: TRAVIS_PULL_REQUEST=false DB=psql
-    - env: TRAVIS_PULL_REQUEST=false DB=mysql
+    - env:
+      - TRAVIS_PULL_REQUEST=false
+      - DB=psql
+    - env:
+      - TRAVIS_PULL_REQUEST=false
+      - DB=mysql
 
 services:
   - mysql
