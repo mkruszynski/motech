@@ -18,8 +18,8 @@ services:
 before_install:
   - sudo chmod +x ./config_services.sh
   - ./config_services.sh
-  - sudo chmod +x ./set_up_databases.sh
-  - ./set_up_databases.sh
+  - sudo chmod +x ./set_up_database.sh
+  - ./set_up_database.sh
 
 install: true
 
