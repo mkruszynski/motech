@@ -5,11 +5,9 @@ jdk:
 matrix:
   include:
     - env:
-      - TRAVIS_PULL_REQUEST!=false
-      - DB=psql
+      - TRAVIS_PULL_REQUEST!=false DB=psql
     - env:
-      - TRAVIS_PULL_REQUEST!=false
-      - DB=mysql
+      - TRAVIS_PULL_REQUEST!=false DB=mysql
 
 services:
   - mysql
