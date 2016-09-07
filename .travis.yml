@@ -2,12 +2,9 @@ language: java
 jdk:
   - oraclejdk8
 
-matrix:
-  include:
-    - env:
-      - TRAVIS_PULL_REQUEST!=false DB=psql
-    - env:
-      - TRAVIS_PULL_REQUEST!=false DB=mysql
+env:
+  - DB=mysql
+  - DB=psql
 
 services:
   - mysql
