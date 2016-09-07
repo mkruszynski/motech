@@ -1,0 +1,30 @@
+language: java
+jdk:
+  - oraclejdk8
+
+matrix:
+  include:
+    - env:
+      - TRAVIS_PULL_REQUEST!=false DB=psql
+    - env:
+      - TRAVIS_PULL_REQUEST!=false DB=mysql
+
+services:
+  - mysql
+  - postgresql
+
+before_install:
+  - sudo chmod +x ./config_services.sh
+  - ./config_services.sh
+  - sudo chmod +x ./set_up_database.sh
+  - ./set_up_database.sh
+
+install: true
+
+script:
+  - sudo chmod +x ./build_pull_request.sh
+  - ./build_pull_request.sh
+
+cache:
+  directories:
+    - $HOME/.m2
