@@ -7,7 +7,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         mvn clean install -PIT -U
     fi
 elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
-    MOTECH_LOCATION = `pwd`
+    MOTECH_LOCATION=`pwd`
     git config user.email "travis-test-maniek@googlegroups.com"
 
     #Download and test Modules
