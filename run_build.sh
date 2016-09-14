@@ -8,7 +8,6 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     fi
 elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
     MOTECH_LOCATION=`pwd`
-    git config user.email "travis-test-maniek@googlegroups.com"
 
     #Download and test Modules
     git clone https://github.com/motech/modules.git ../modules -b master --single-branch
@@ -21,7 +20,6 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
     fi
 
     #Deploy MOTECH
-    echo $MOTECH_LOCATION
     cd $MOTECH_LOCATION
     mvn -Dmaven.test.skip=true clean deploy -U
 fi
