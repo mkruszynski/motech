@@ -16,10 +16,10 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
 
     #If build fails, return error code
     if [ "$?" -ne 0 ]; then
-        exit 0
+        exit 1
     fi
 
     #Deploy MOTECH
     cd $MOTECH_LOCATION
-    mvn -Dmaven.test.skip=true clean deploy -U
+    mvn -Dmaven.test.skip=true --settings deploy_settings.xml clean deploy -U
 fi
