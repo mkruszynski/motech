@@ -7,9 +7,11 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         mvn clean install -PIT -U
     fi
 elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
+    echo "Weszłem"
     MOTECH_LOCATION=`pwd`
 
     #Download and test Modules
+    echo "klon moduly"
     git clone https://github.com/motech/modules.git ../modules -b master --single-branch
     cd ../modules/
     #mvn clean install -PIT -U
@@ -21,5 +23,6 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
 
     #Deploy MOTECH
     cd $MOTECH_LOCATION
+    echo "deploy"
     mvn -Dmaven.test.skip=true clean deploy -U
 fi
