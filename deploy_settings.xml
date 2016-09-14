@@ -1,0 +1,7 @@
+<servers>
+    <server>
+        <id>Motechproject Nexus</id>
+        <username>${env.SONATYPE_USERNAME}</username>
+        <password>${env.SONATYPE_PASSWORD}</password>
+    </server>
+</servers>
