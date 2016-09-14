@@ -17,6 +17,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/ /usr/share/tomcat7/ /var/log/tomcat7/
 fi
 
+#Change root password in mysql
 if [ "$DB" = "mysql" ]; then
     echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 fi
