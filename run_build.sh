@@ -13,7 +13,7 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
     #Download and test Modules
     git clone https://github.com/motech/modules.git ../modules -b master --single-branch
     cd ../modules/
-    mvn clean install -PIT -U
+    #mvn clean install -PIT -U
 
     #If build fails, return error code
     if [ "$?" -ne 0 ]; then
