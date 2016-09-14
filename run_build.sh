@@ -21,8 +21,7 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
     fi
 
     #Deploy MOTECH
+    echo $MOTECH_LOCATION
     cd $MOTECH_LOCATION
     mvn -Dmaven.test.skip=true clean deploy -U
-else
-    exit 1
 fi
