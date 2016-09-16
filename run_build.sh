@@ -5,7 +5,7 @@ if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then
     cd ../motech-master/
     mkdir ~/.motech
     mkdir ~/.motech/config
-    cp ./testdata/bootstrap.properties ~/.motech/config/
+    cp ./testdata/config-locations.properties ~/.motech/
     cd ./modules/admin/
     mvn -Dmysql.password=password -Dmaven.test.failure.ignore=false -Dmysql.user=root -DunitTests.skip=true clean install -PFT -U
 fi
