@@ -2,17 +2,8 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  - DB=mysql
-  - DB=psql
-
 services:
   - mysql
-  - postgresql
-
-before_install:
-  - sudo chmod +x ./config_services.sh
-  - ./config_services.sh
 
 install: true
 
@@ -23,3 +14,10 @@ script:
 cache:
   directories:
     - $HOME/.m2
+
+notifications:
+  email:
+    recipients:
+      - travis-test-maniek@googlegroups.com
+    on_success: never
+    on_failure: always
