@@ -5,10 +5,6 @@ jdk:
 services:
   - mysql
 
-before_install:
-  - sudo chmod +x ./config_services.sh
-  - ./config_services.sh
-
 install: true
 
 script:
