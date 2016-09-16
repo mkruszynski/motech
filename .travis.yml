@@ -5,6 +5,10 @@ jdk:
 services:
   - mysql
 
+before_script:
+  - sudo chmod +x ./config_services.sh
+  - ./config_services.sh
+
 install: true
 
 script:

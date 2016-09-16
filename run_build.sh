@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then
-    #Set mysql root password
-    echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
     git clone https://github.com/motech/motech.git ../motech-master -b master --single-branch
     mkdir ~/.motech
     cp ../motech-master/testdata/config-locations.properties ~/.motech/
