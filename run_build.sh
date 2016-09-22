@@ -7,6 +7,9 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         mvn clean install -PIT -U
     fi
 elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
+
+    mvn clean install -PIT -U
+
     MOTECH_LOCATION=`pwd`
 
     #Download and test Modules
