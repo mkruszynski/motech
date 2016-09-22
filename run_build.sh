@@ -10,8 +10,6 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
 
     mvn clean install -PIT -U
 
-    rm -r ~/.motech/*
-
     MOTECH_LOCATION=`pwd`
 
     #Download and test Modules
