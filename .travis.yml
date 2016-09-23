@@ -3,10 +3,9 @@ jdk:
   - oraclejdk8
 
 env:
-  - DB=mysql
+  - DB=mysql REPOSITORY=motech
+  - DB=mysql REPOSITORY=modules
   - DB=psql
-  - REPOSITORY=motech
-  - REPOSITORY=modules
 
 services:
   - mysql
