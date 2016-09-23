@@ -5,6 +5,8 @@ jdk:
 env:
   - DB=mysql
   - DB=psql
+  - REPOSITORY=motech
+  - REPOSITORY=modules
 
 services:
   - mysql

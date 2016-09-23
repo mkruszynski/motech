@@ -7,23 +7,23 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         mvn clean install -PIT -U
     fi
 elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
-
-    mvn clean install -PIT -U
-
-    rm -r $HOME/.m2/repository/org/motechproject/*
     MOTECH_LOCATION=`pwd`
 
-    #Download and test Modules
-    git clone https://github.com/motech/modules.git ../modules -b master --single-branch
-    cd ../modules/
-    mvn clean install -PIT -U
-
-    #If build fails, return error code
-    if [ "$?" -ne 0 ]; then
-        exit 1
+    if [ "$REPOSITORY" = "motech" ]; then
+        mvn clean install -PIT -U
+    elif [ "$REPOSITORY" = "modules" ]; then
+        #Download and test Modules
+        git clone https://github.com/motech/modules.git ../modules -b master --single-branch
+        cd ../modules/
+        mvn clean install -PIT -U
     fi
 
-    #Deploy MOTECH
-    cd $MOTECH_LOCATION
-    mvn -Dmaven.test.skip=true --settings deploy_settings.xml clean deploy -U
+    declare exitCode
+    $(npm bin)/travis-after-all
+    exitCode=$?
+    if [ $exitCode -eq 0 ]; then
+        #Deploy MOTECH
+        cd $MOTECH_LOCATION
+        mvn -Dmaven.test.skip=true --settings deploy_settings.xml clean deploy -U
+    fi
 fi
