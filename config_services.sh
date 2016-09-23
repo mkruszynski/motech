@@ -18,3 +18,5 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/ /usr/share/tomcat7/ /var/log/tom
 if [ "$DB" = "mysql" ]; then
     echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 fi
+
+npm install --save-dev travis-after-all
