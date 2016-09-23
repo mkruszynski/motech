@@ -10,7 +10,7 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
 
     mvn clean install -PIT -U
 
-    rm -r $HOME/.m2/repository/org/motechproject/motech-tasks/*
+    rm -r $HOME/.m2/repository/org/motechproject/*
     MOTECH_LOCATION=`pwd`
 
     #Download and test Modules
