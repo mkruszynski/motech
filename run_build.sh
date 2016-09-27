@@ -10,11 +10,13 @@ elif [ "$TRAVIS_BRANCH" = "master" ] && [ "$DB" = "mysql" ]; then
     MOTECH_LOCATION=`pwd`
 
     if [ "$REPOSITORY" = "motech" ]; then
+        npm install --save-dev travis-after-all
         mvn clean install -PIT -U
     elif [ "$REPOSITORY" = "modules" ]; then
         #Download and test Modules
         git clone https://github.com/motech/modules.git ../modules -b master --single-branch
         cd ../modules/
+        npm install --save-dev travis-after-all
         mvn clean install -PIT -U
     fi
 
