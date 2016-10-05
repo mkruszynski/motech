@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then
+    rm -r ~/.m2/repository/org/motechproject/*
     git clone https://github.com/motech/motech.git ../motech-master -b master --single-branch
     mkdir ~/.motech
     cp ../motech-master/testdata/config-locations.properties ~/.motech/
