@@ -4,10 +4,10 @@
 if [ "$TRAVIS_EVENT_TYPE" = "api" ] && [ ! -z "$developmentVersion" ] && [ ! -z "$scmTag" ] && [ ! -z "$releaseVersion" ] && [ ! -z "$githubMail" ] && [ ! -z "$githubUsername" ]; then
     #mvn --settings deploy-settings.xml clean deploy -e -PIT,DEB,RPM -B -U
 
+    ls -l ../
+    chmod +w -R ../motech
     git config --global user.email "$githubMail"
     git config --global user.name "$githubUsername"
-    git config --global -l
-    
     git checkout -f $TRAVIS_BRANCH
     git reset --hard $TRAVIS_BRANCH
 
