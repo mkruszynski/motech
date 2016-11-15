@@ -3,10 +3,9 @@
 #Release
 if [ "$TRAVIS_EVENT_TYPE" = "api" ] && [ ! -z "$developmentVersion" ] && [ ! -z "$scmTag" ] && [ ! -z "$releaseVersion" ] && [ ! -z "$githubMail" ] && [ ! -z "$githubUsername" ]; then
     #mvn --settings deploy-settings.xml clean deploy -e -PIT,DEB,RPM -B -U
-    
+
     git config --global user.email "$githubMail"
     git config --global user.name "$githubUsername"
-    git clean -fdx
     git checkout -f $TRAVIS_BRANCH
     git reset --hard $TRAVIS_BRANCH
 
