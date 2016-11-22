@@ -15,7 +15,7 @@ if [ "$TRAVIS_EVENT_TYPE" = "api" ] && [ ! -z "$developmentVersion" ] && [ ! -z 
     chmod 600 ~/.ssh/id_rsa
     echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
-    mvn -DdevelopmentVersion=$developmentVersion -Dscm.tag=$scmTag -DreleaseVersion=$releaseVersion -Dmaven.test.failure.ignore=false -Dscm.developerConnection=scm:git:git@github.com:mkruszynski/motech.git -Dscm.connection=scm:git:git@github.com:mkruszynski/motech.git release:clean release:prepare release:perform
+    mvn --settings deploy-settings.xml -DdevelopmentVersion=$developmentVersion -Dscm.tag=$scmTag -DreleaseVersion=$releaseVersion -Dmaven.test.failure.ignore=false -Dscm.developerConnection=scm:git:git@github.com:mkruszynski/motech.git -Dscm.connection=scm:git:git@github.com:mkruszynski/motech.git release:clean release:prepare release:perform
 fi
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
