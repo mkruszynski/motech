@@ -12,6 +12,7 @@ if [ "$TRAVIS_EVENT_TYPE" = "api" ] && [ ! -z "$developmentVersion" ] && [ ! -z 
     git reset --hard $TRAVIS_BRANCH
 
     mv id_rsa ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
 
     mvn -DdevelopmentVersion=$developmentVersion -Dscm.tag=$scmTag -DreleaseVersion=$releaseVersion -Dmaven.test.failure.ignore=false -Dscm.developerConnection=scm:git:git@github.com:mkruszynski/motech.git -Dscm.connection=scm:git:git@github.com:mkruszynski/motech.git release:clean release:prepare release:perform
 fi
