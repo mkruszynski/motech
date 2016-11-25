@@ -1,21 +1,25 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
+
 env:
   - DB=mysql
   - DB=psql
+
 services:
   - mysql
   - postgresql
+
 before_install:
-  - openssl aes-256-cbc -K $encrypted_02dc8a1707c2_key -iv $encrypted_02dc8a1707c2_iv
-    -in id_rsa.enc -out id_rsa -d
   - sudo chmod +x ./config_services.sh
   - ./config_services.sh
+
 install: true
+
 script:
   - sudo chmod +x ./run_build.sh
-  - travis_wait 30 ./run_build.sh
+  - travis_wait 60 ./run_build.sh
+
 cache:
   directories:
-  - $HOME/.m2
+    - $HOME/.m2
