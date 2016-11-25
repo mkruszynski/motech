@@ -2,20 +2,26 @@
 
 #Release
 if [ "$TRAVIS_EVENT_TYPE" = "api" ] && [ ! -z "$developmentVersion" ] && [ ! -z "$scmTag" ] && [ ! -z "$releaseVersion" ] && [ ! -z "$githubMail" ] && [ ! -z "$githubUsername" ]; then
+    sudo apt-get install -y rpm -qq
+    sudo apt-get install -y lintian -qq
+
+    echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+
     #mvn --settings deploy-settings.xml clean deploy -e -PIT,DEB,RPM -B -U
 
-    ls -l ../
-    chmod +w -R ../motech
     git config --global user.email "$githubMail"
     git config --global user.name "$githubUsername"
     git checkout -f $TRAVIS_BRANCH
     git reset --hard $TRAVIS_BRANCH
 
+    openssl aes-256-cbc -K $encrypted_02dc8a1707c2_key -iv $encrypted_02dc8a1707c2_iv -in id_rsa.enc -out id_rsa -d
     mv id_rsa ~/.ssh/id_rsa
     chmod 600 ~/.ssh/id_rsa
     echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    ssh-add ~/.ssh/id_rsa
 
     mvn --settings deploy-settings.xml -DdevelopmentVersion=$developmentVersion -Dscm.tag=$scmTag -DreleaseVersion=$releaseVersion -Dmaven.test.failure.ignore=false -Dscm.developerConnection=scm:git:git@github.com:mkruszynski/motech.git -Dscm.connection=scm:git:git@github.com:mkruszynski/motech.git release:clean release:prepare release:perform
+
 fi
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
